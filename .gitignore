@@ -40,3 +40,7 @@ prefabs.json
 *.js
 /pokeemerald-*.png
 /pokeemerald_modern-*.png
+/agbcc
+AGENTS.md
+/tools/porymap
+/downloaded_tilesets
