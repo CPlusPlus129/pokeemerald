@@ -89,3 +89,26 @@ To create a new map, you generally need to touch three systems: **Map Groups**, 
         "secondary_tileset": "gTileset_Petalburg",
         "border_filepath": "data/layouts/NewMapName/border.bin",
         "blockdata_filepath": "data/layouts/NewMapName/map.bin"
+    }
+    ```
+
+### 2. Visualizing & Editing Maps (Recommended Tool)
+
+For verifying map appearance and making specific block edits, **always use the custom `map_tool.py`** located in the project root. This tool allows you to render the map as it appears in-game, which is critical for quality assurance before building.
+
+#### Usage
+
+Make sure the script is executable: `chmod +x map_tool.py`
+
+| Action | Command | Description |
+| :--- | :--- | :--- |
+| **Render** | `./map_tool.py render <MapName> <Output.png>` | Generates a PNG of the map using its tilesets. **Use this to check your work.** |
+| **Edit** | `./map_tool.py set-block <MapName> <X> <Y> <MetatileID>` | Sets a specific block at (X, Y) to the given Metatile ID (e.g., `0x1D4`). |
+| **Build** | `./map_tool.py build` | Runs `make` with parallel jobs to compile the ROM. |
+
+#### Workflow Example
+1.  Render the map to check for errors: `./map_tool.py render PetalburgCity check.png`
+2.  Identify a wrong tile (e.g., at 0,0).
+3.  Fix the tile: `./map_tool.py set-block PetalburgCity 0 0 0x1D4`
+4.  Verify the fix: `./map_tool.py render PetalburgCity check_fixed.png`
+5.  Build the ROM: `./map_tool.py build`
