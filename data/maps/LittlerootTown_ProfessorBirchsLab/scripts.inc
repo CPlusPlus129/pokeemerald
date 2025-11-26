@@ -899,15 +899,15 @@ LittlerootTown_ProfessorBirchsLab_Text_CanHaveAnyOneOfRarePokemon:
 
 LittlerootTown_ProfessorBirchsLab_Text_YoullTakeCyndaquil:
 	.string "PROF. BIRCH: The FIRE POKéMON\n"
-	.string "CYNDAQUIL caught your eye!\p"
-	.string "You're as sharp as ever!\p"
-	.string "So the CYNDAQUIL is your choice?$"
+	.string "CYBER TORCHIC caught your eye!\p"
+	.string "A technological marvel from the future!\p"
+	.string "So the CYBER TORCHIC is your choice?$"
 
 LittlerootTown_ProfessorBirchsLab_Text_YoullTakeTotodile:
 	.string "PROF. BIRCH: The WATER POKéMON\n"
-	.string "TOTODILE is your choice!\p"
-	.string "You know how to pick a good one.\p"
-	.string "So, you'll take the TOTODILE?$"
+	.string "COSMIC MUDKIP is your choice!\p"
+	.string "A being from beyond our stars!\p"
+	.string "So, you'll take COSMIC MUDKIP?$"
 
 LittlerootTown_ProfessorBirchsLab_Text_YoullTakeChikorita:
 	.string "PROF. BIRCH: The GRASS POKéMON\n"
@@ -918,7 +918,8 @@ LittlerootTown_ProfessorBirchsLab_Text_YoullTakeChikorita:
 LittlerootTown_ProfessorBirchsLab_Text_TakeYourTimeAllInvaluable:
 	.string "PROF. BIRCH: Take your time before\n"
 	.string "you decide.\p"
-	.string "They're all invaluable POKéMON.$"
+	.string "These temporal variants are incredibly rare!\p"
+	.string "Each holds power from a different era.$"
 
 @ Unused
 LittlerootTown_ProfessorBirchsLab_Text_PickedFinePokemon:

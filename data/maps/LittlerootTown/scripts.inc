@@ -1006,13 +1006,26 @@ LittlerootTown_Text_PlayersHouse:
 LittlerootTown_Text_ProfBirchsHouse:
 	.string "PROF. BIRCH'S HOUSE$"
 
+LittlerootTown_Text_TemporalResearcherIntro:
+	.string "TEMPORAL RESEARCHER: Welcome to\n"
+	.string "LITTLEROOT TOWN, young trainer!\p"
+	.string "We're not just a simple town - we're a\n"
+	.string "temporal research station studying the\l"
+	.string "mysterious time rifts appearing across HOENN.\p"
+	.string "Your family are renowned temporal\n"
+	.string "researchers. You're in good hands here.\p"
+	.string "Be careful out there - temporal anomalies\n"
+	.string "have been affecting wild POKéMON!\p"
+	.string "Some have even gained strange new\n"
+	.string "powers from different time periods!$"
+
 LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 	.string "PROF. BIRCH: Well, well, {PLAYER}{KUN}!\n"
 	.string "That was good work out there!\p"
 	.string "I knew there was something special\n"
 	.string "about you when I first saw you,\l"
 	.string "but I never expected this.\p"
-	.string "Oh, yes. Do you still have the POKéDEX\n"
+	.string "Oh, yes. Do you still have POKéDEX\n"
 	.string "I gave you?\p"
 	.string "I have something to show you.\n"
 	.string "Let's go to my LAB.$"

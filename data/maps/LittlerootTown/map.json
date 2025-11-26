@@ -236,7 +236,7 @@
       "elevation": 3,
       "var": "VAR_LITTLEROOT_TOWN_STATE",
       "var_value": "3",
-      "script": "LittlerootTown_EventScript_GiveRunningShoesTrigger0"
+      "script": "LittlerootTown_EventScript_GiveRunningShoesTrigger"
     },
     {
       "type": "trigger",
