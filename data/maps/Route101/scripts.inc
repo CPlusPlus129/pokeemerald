@@ -258,11 +258,14 @@ Route101_Movement_BirchApproachPlayer:
 	step_end
 
 Route101_Text_HelpMe:
+	.string "Temporal rift! It's unstable!\p"
+	.string "The POKéMON... it's not from our time!\p"
 	.string "H-help me!$"
 
 Route101_Text_PleaseHelp:
 	.string "Hello! You over there!\n"
 	.string "Please! Help!\p"
+	.string "A temporal rift spawned this POKéMON!\p"
 	.string "In my BAG!\n"
 	.string "There's a POKé BALL!$"
 
