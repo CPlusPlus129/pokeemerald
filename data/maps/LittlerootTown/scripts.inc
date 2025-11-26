@@ -424,15 +424,18 @@ LittlerootTown_EventScript_BirchsHouseSignMale::
 	return
 
 LittlerootTown_EventScript_PlayersHouseSignFemale::
-	msgbox LittlerootTown_Text_PlayersHouse, MSGBOX_DEFAULT
+	msgbox LittlerootTown_Text_ProfBirchsHouse, MSGBOX_DEFAULT
 	return
 
-LittlerootTown_EventScript_GiveRunningShoesTrigger0::
-	lockall
-	setvar VAR_0x8008, 0
-	setobjectxy LOCALID_LITTLEROOT_MOM, 10, 9
-	goto LittlerootTown_EventScript_GiveRunningShoesTrigger
+LittlerootTown_EventScript_TemporalResearcher::
+	lock
+	faceplayer
+	msgbox LittlerootTown_Text_TemporalResearcherIntro, MSGBOX_DEFAULT
+	closemessage
+	release
 	end
+
+end
 
 LittlerootTown_EventScript_GiveRunningShoesTrigger1::
 	lockall
