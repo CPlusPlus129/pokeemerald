@@ -1,47 +1,42 @@
 import map_tool
+import os
 
 def analyze_layouts():
+    os.chdir(os.path.dirname(os.path.abspath(__file__)))
     viz = map_tool.MapVisualizer(".")
     project = viz.project
     
-    layouts = [
-        ("MauvilleCity", "LAYOUT_MAUVILLE_CITY"),
-        ("OldaleTown", "LAYOUT_OLDALE_TOWN")
+    # Analyze a house in Littleroot (BrendansHouse_1F)
+    # Analyze Pokemon Center in Petalburg
+    # Analyze Mauville City center
+    
+    targets = [
+        ("Petalburg_PokeCenter", "LAYOUT_POKEMON_CENTER_1F"),
+        ("Mauville_Gym", "LAYOUT_MAUVILLE_CITY_GYM")
     ]
     
-    for name, layout_id in layouts:
+    for name, layout_id in targets:
         print(f"\nAnalyzing {name} ({layout_id})...")
         try:
             blocks, width, height, path = project.read_blockdata(layout_id)
+            print(f"Dimensions: {width}x{height}")
+            # Print unique blocks
+            unique_blocks = set()
+            for val in blocks:
+                unique_blocks.add(val & 0x3FF)
+            sorted_unique = sorted(list(unique_blocks))
+            print(f"Unique Metatiles: {[hex(b) for b in sorted_unique]}")
             
-            # Print a small section to identify ground/fence
-            # For Mauville, let's look at the bottom row (Y=19) to find fences?
-            # Or Y=0 (Top)
-            
-            if name == "MauvilleCity":
-                print("--- Secondary Blocks in Mauville ---")
-                secondary_blocks = {}
-                for i, val in enumerate(blocks):
-                     metatile = val & 0x3FF
-                     if metatile >= 0x200:
-                         secondary_blocks[metatile] = secondary_blocks.get(metatile, 0) + 1
-                
-                # Sort by frequency
-                sorted_blocks = sorted(secondary_blocks.items(), key=lambda x: x[1], reverse=True)
-                print(f"Top 10 Secondary Blocks: {sorted_blocks[:10]}")
+            # Print a 5x5 slice of the center to see floor/wall patterns
+            cx, cy = width // 2, height // 2
+            print(f"Slice around ({cx}, {cy}):")
+            for y in range(max(0, cy-2), min(height, cy+3)):
+                row = []
+                for x in range(max(0, cx-2), min(width, cx+3)):
+                    idx = y * width + x
+                    row.append(hex(blocks[idx] & 0x3FF))
+                print(f"Y={y}: {row}")
 
-
-            if name == "OldaleTown":
-                # Print Center Area to see current ground
-                print("--- Center Area (10,10) ---")
-                for y in range(9, 12):
-                    row = []
-                    for x in range(9, 12):
-                        idx = y * width + x
-                        val = blocks[idx] & 0x3FF
-                        row.append(hex(val))
-                    print(f"Y={y}: {row}")
-        
         except Exception as e:
             print(f"Error reading {name}: {e}")
 
